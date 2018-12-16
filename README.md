@@ -1,7 +1,7 @@
 # Solidity Upgrade
 
-This is a work in progress [Prettier Plugin](https://prettier.io/docs/en/plugins.html) for Refactoring [Solidity](https://github.com/ethereum/solidity) 0.4.x code to 0.5.x code.
-This tool does the following tasks currently:
+This is a work in progress [Prettier Plugin](https://prettier.io/docs/en/plugins.html) for Refactoring [Solidity](https://github.com/ethereum/solidity) 0.4.X code to 0.5.X code.
+This tool does the following tasks currently to refactor your soldiity 0.4.X code to work with solidity 0.5.X:
 1) Change pragma version to `^0.5.0`.
 2) Add `calldata` storage keyword infront of `external` function complex parameters and `memory` infront of other function's complex parameters that don't already have a defined parameter storage location.
 3) Rename constructor function from `function ContractName` to `constructor`.
@@ -37,5 +37,9 @@ OR command with default config is
 
 You may add the command script to your package.json file and then use `npm run scriptName` to execute the command.
 
-## Known bugs
+### Known limitations
+1) It does not add `payable` to addresses as it can not detect which addresses require to be payable. If you are using `addressA.send` or `addressA.transfer`, please manually declare them as `address payable addressA` rather than `address addressA`.
+2) This tool is still under early testing. Please always manually verify all your contracts after using this tool. It might have unexpected side-effects.
+
+### Known bugs
 1) It does not work when the function body has only one comment and no statements.
