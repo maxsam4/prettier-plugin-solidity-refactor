@@ -25,9 +25,9 @@ This plugin allows you to [configure prettier](https://prettier.io/docs/en/optio
 ./node_modules/.bin/prettier --write --tab-width 4 --print-width 140 '**/*.sol'
 ```
 
-command with default config is
+OR command with default config is
 ```
-./node_modules/.bin/prettier '**/*.sol'
+./node_modules/.bin/prettier --write '**/*.sol'
 ```
 
 You may add the command script to your package.json file and then use `npm run scriptName` to execute the command.
