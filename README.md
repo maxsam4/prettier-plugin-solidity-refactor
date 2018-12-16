@@ -8,7 +8,7 @@ This tool does the following tasks currently:
 
 ## Installation 
 
-Install both `prettier` and `solidity-refactor`:
+Install both `prettier` and `prettier-plugin-solidity-refactor`:
 
 ```
 npm install --save-dev prettier prettier-plugin-solidity-refactor
