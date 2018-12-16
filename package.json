@@ -1,65 +1,35 @@
 {
-  "name": "prettier-plugin-solidity",
-  "version": "1.0.0-alpha.12",
-  "description": "prettier plugin for solidity",
+  "name": "prettier-plugin-solidity-refactor",
+  "version": "1.0.0-alpha.2",
+  "description": "prettier plugin for solidity that refactors solidity 0.4.x code to solidity 0.5.x code",
   "main": "src",
-  "scripts": {
-    "coverage": "codecov",
-    "eslint": "eslint --ignore-pattern 'src/prettier-comments/**' 'src/**'",
-    "lint": "npm run eslint && npm run prettier -- --list-different",
-    "lint:fix": "npm run eslint -- --fix && npm run prettier -- --write",
-    "prettier": "prettier '{.,{src,tests_config}/**}/*.{js{,on},md}' 'tests/**/jsfmt.spec.js' '!src/prettier-comments/**/*'",
-    "test": "jest"
-  },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/prettier-solidity/prettier-plugin-solidity.git"
+    "url": "git+https://github.com/maxsam4/prettier-plugin-solidity.git"
   },
   "keywords": [
     "ethereum",
     "plugin",
     "prettier",
-    "solidity"
+    "solidity",
+    "refactor",
+    "upgrade"
   ],
   "author": {
-    "email": "mattia.richetto@gmail.com",
-    "name": "Mattia Richetto"
+    "email": "hi@mudit.blog",
+    "name": "Mudit Gupta"
   },
-  "contributors": [
-    {
-      "email": "federico.bond@gmail.com",
-      "name": "Federico Bond"
-    },
-    {
-      "email": "git@twopointzero.us",
-      "name": "Jed Fox"
-    },
-    {
-      "email": "victorio.franco@gmail.com",
-      "name": "Franco Victorio"
-    }
-  ],
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/prettier-solidity/prettier-plugin-solidity/issues"
+    "url": "https://github.com/maxsam4/prettier-plugin-solidity/issues"
   },
-  "homepage": "https://github.com/prettier-solidity/prettier-plugin-solidity#readme",
-  "devDependencies": {
-    "codecov": "^3.0.4",
-    "eslint": "^5.9.0",
-    "eslint-config-airbnb": "^17.0.0",
-    "eslint-plugin-import": "^2.14.0",
-    "eslint-plugin-jsx-a11y": "^6.1.2",
-    "eslint-plugin-react": "^7.11.0",
-    "jest": "^23.5.0",
-    "jest-watch-typeahead": "^0.2.0"
-  },
+  "homepage": "https://github.com/maxsam4/prettier-plugin-solidity#readme",
   "dependencies": {
     "emoji-regex": "^7.0.1",
     "escape-string-regexp": "^1.0.5",
     "extract-comments": "^1.1.0",
     "prettier": "^1.15.2",
     "solidity-parser-antlr": "^0.3.1",
-    "string-width": "^2.1.1"
+    "string-width": "3.0.0"
   }
 }

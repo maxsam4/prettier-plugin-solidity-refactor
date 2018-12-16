@@ -1,38 +1,33 @@
-# prettier-plugin-solidity
+# solidity-upgrade
 
-[![Build Status](https://travis-ci.com/prettier-solidity/prettier-plugin-solidity.svg?branch=master)](https://travis-ci.com/prettier-solidity/prettier-plugin-solidity)
-[![codecov](https://codecov.io/gh/prettier-solidity/prettier-plugin-solidity/branch/master/graph/badge.svg)](https://codecov.io/gh/prettier-solidity/prettier-plugin-solidity)
+This is a work in progress [Prettier Plugin](https://prettier.io/docs/en/plugins.html) for Refactoring [Solidity](https://github.com/ethereum/solidity) 0.4.x code to 0.5.x code.
+This tool does the following tasks currently:
+1) Change pragma version to `^0.5.0`.
+2) Add `calldata` storage keyword infront of `external` function parameters and `memory` infront of other function's parameters that don't already have a defined parameter storage location.
 
-This is a work in progress [Prettier Plugin](https://prettier.io/docs/en/plugins.html) for [Solidity](https://github.com/ethereum/solidity).
+## Installation 
 
-## Installation and usage
-
-Install both `prettier` and `prettier-plugin-solidity`:
-
-```
-npm install --save-dev prettier prettier-plugin-solidity
-```
-
-You can add a script for running prettier on all your contracts:
+Install both `prettier` and `solidity-refactor`:
 
 ```
-"prettier": "prettier --write **/*.sol"
+npm install --save-dev prettier prettier-plugin-solidity-refactor
+```
+OR
+```
+yarn add --dev prettier prettier-plugin-solidity-refactor
 ```
 
-Or you can use it as part of your linting to check that all your code is prettified:
+## Usage
+
+This plugin allows you to [configure prettier](https://prettier.io/docs/en/options.html) to your needs. Command with my personal config is
 
 ```
-"lint": "prettier --list-different **/*.sol"
+./node_modules/.bin/prettier --write --tab-width 4 --print-width 140 '**/*.sol'
 ```
 
-## Contributing
+command with default config is
+```
+./node_modules/.bin/prettier '**/*.sol'
+```
 
-1. [Fork it](https://github.com/prettier-solidity/prettier-plugin-solidity/fork)
-2. Create your feature branch (`git checkout -b feature/fooBar`)
-3. Commit your changes (`git commit -am 'Add some fooBar'`)
-4. Push to the branch (`git push origin feature/fooBar`)
-5. Create a new Pull Request
-
-## License
-
-Distributed under the MIT license. See [LICENSE](LICENSE) for more information.
+You may add the command script to your package.json file and then use `npm run scriptName` to execute the command.

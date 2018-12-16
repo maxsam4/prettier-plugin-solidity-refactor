@@ -35,7 +35,7 @@ function genericPrint(path, options, print) {
     case 'SourceUnit':
       return printPreservingEmptyLines(path, 'children', options, print);
     case 'PragmaDirective':
-      return concat(['pragma ', node.name, ' ', node.value, ';']);
+      return 'pragma solidity ^0.5.0;';
     case 'ImportDirective':
       // @TODO: handle proper escaping
       doc = concat(['"', node.path, '"']);
@@ -133,10 +133,28 @@ function genericPrint(path, options, print) {
       );
     case 'Parameter':
       doc = path.call(print, 'typeName');
-      doc = join(
-        ' ',
-        [doc, node.storageLocation, node.name].filter(element => element)
-      );
+      if (!node.storageLocation) {
+        let parentNode = path.getParentNode();
+        let parentParentNode = path.getParentNode(1); 
+        if (parentParentNode.parameters === parentNode) {
+          if(parentParentNode.visibility === 'external') {
+            doc = join(
+              ' ',
+              [doc, 'calldata', node.name].filter(element => element)
+            );
+          } else {
+            doc = join(
+              ' ',
+              [doc, 'memory', node.name].filter(element => element)
+            );
+          }
+        }
+      } else {
+        doc = join(
+          ' ',
+          [doc, node.storageLocation, node.name].filter(element => element)
+        );
+      }
       return doc;
     case 'ModifierInvocation':
       doc = node.name;
