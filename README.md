@@ -4,6 +4,7 @@ This is a work in progress [Prettier Plugin](https://prettier.io/docs/en/plugins
 This tool does the following tasks currently:
 1) Change pragma version to `^0.5.0`.
 2) Add `calldata` storage keyword infront of `external` function parameters and `memory` infront of other function's parameters that don't already have a defined parameter storage location.
+3) Prettify your code using prettier.
 
 ## Installation 
 
