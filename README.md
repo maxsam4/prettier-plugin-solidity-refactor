@@ -47,4 +47,4 @@ You may add the command script to your package.json file and then use `npm run s
 ### TODO
 1) Add test cases.
 
-## Contributions are welcome.
+### Contributions are welcome.
