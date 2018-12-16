@@ -134,17 +134,20 @@ function genericPrint(path, options, print) {
     case 'Parameter':
       doc = path.call(print, 'typeName');
       if (!node.storageLocation) {
-        let parentNode = path.getParentNode(1);
-        if(parentNode.visibility === 'external') {
-          doc = join(
-            ' ',
-            [doc, 'calldata', node.name].filter(element => element)
-          );
-        } else {
-          doc = join(
-            ' ',
-            [doc, 'memory', node.name].filter(element => element)
-          );
+        let parentNode = path.getParentNode();
+        let parentParentNode = path.getParentNode(1); 
+        if (parentParentNode.parameters === parentNode) {
+          if(parentParentNode.visibility === 'external') {
+            doc = join(
+              ' ',
+              [doc, 'calldata', node.name].filter(element => element)
+            );
+          } else {
+            doc = join(
+              ' ',
+              [doc, 'memory', node.name].filter(element => element)
+            );
+          }
         }
       } else {
         doc = join(
