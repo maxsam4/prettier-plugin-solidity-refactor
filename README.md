@@ -1,4 +1,4 @@
-# solidity-upgrade
+# Solidity Upgrade
 
 This is a work in progress [Prettier Plugin](https://prettier.io/docs/en/plugins.html) for Refactoring [Solidity](https://github.com/ethereum/solidity) 0.4.x code to 0.5.x code.
 This tool does the following tasks currently:
@@ -36,3 +36,6 @@ OR command with default config is
 ```
 
 You may add the command script to your package.json file and then use `npm run scriptName` to execute the command.
+
+## Known bugs
+1) It does not work when the function body has only one comment and no statements.
