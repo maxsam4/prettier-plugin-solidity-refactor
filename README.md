@@ -29,10 +29,9 @@ This plugin allows you to [configure prettier](https://prettier.io/docs/en/optio
 ```
 ./node_modules/.bin/prettier --write --tab-width 4 --print-width 140 '**/*.sol'
 ```
-
-OR command with default config is
+OR command with default config that will just print changed contracts to stdout instead of actually making chnages:
 ```
-./node_modules/.bin/prettier --write '**/*.sol'
+./node_modules/.bin/prettier '**/*.sol'
 ```
 
 You may add the command script to your package.json file and then use `npm run scriptName` to execute the command.
@@ -47,4 +46,4 @@ You may add the command script to your package.json file and then use `npm run s
 ### TODO
 1) Add test cases.
 
-### Contributions are welcome.
+### Contributions of any kind are welcome.
