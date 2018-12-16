@@ -22,5 +22,12 @@ yarn add --dev prettier prettier-plugin-solidity-refactor
 This plugin allows you to [configure prettier](https://prettier.io/docs/en/options.html) to your needs. Command with my personal config is
 
 ```
-prettier --write --tab-width 4 --print-width 140 '**/*.sol'
+./node_modules/.bin/prettier --write --tab-width 4 --print-width 140 '**/*.sol'
 ```
+
+command with default config is
+```
+./node_modules/.bin/prettier '**/*.sol'
+```
+
+You may add the command script to your package.json file and then use `npm run scriptName` to execute the command.
