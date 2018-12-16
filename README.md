@@ -2,22 +2,18 @@
 
 This is a work in progress [Prettier Plugin](https://prettier.io/docs/en/plugins.html) for Refactoring [Solidity](https://github.com/ethereum/solidity) 0.4.x code to 0.5.x code.
 
-## Installation and usage
+## Installation 
 
-Install both `prettier` and `prettier-plugin-solidity`:
-
-```
-npm install --save-dev prettier prettier-plugin-solidity
-```
-
-You can add a script for running prettier on all your contracts:
+Install both `prettier` and `solidity-refactor`:
 
 ```
-"prettier": "prettier --write **/*.sol"
+npm install --save-dev prettier solidity-refactor
 ```
 
-Or you can use it as part of your linting to check that all your code is prettified:
+## Usage
+
+This plugin allows you to [configure prettier](https://prettier.io/docs/en/options.html) to your needs. Command with my personal config is
 
 ```
-"lint": "prettier --list-different **/*.sol"
+prettier --write --tab-width 4 --print-width 140 '**/*.sol'
 ```
