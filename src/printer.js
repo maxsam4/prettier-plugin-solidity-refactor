@@ -137,10 +137,10 @@ function genericPrint(path, options, print) {
       );
     case 'Parameter':
       doc = path.call(print, 'typeName');
-      if (!node.storageLocation) {
+      if (!node.storageLocation && node.typeName.type !== 'ElementaryTypeName') {
         let parentNode = path.getParentNode();
         let parentParentNode = path.getParentNode(1); 
-        if (parentParentNode.parameters === parentNode && node.typeName.type !== 'ElementaryTypeName') {
+        if (parentParentNode.parameters === parentNode) {
           if(parentParentNode.visibility === 'external') {
             doc = join(
               ' ',
