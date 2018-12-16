@@ -10,7 +10,11 @@ This tool does the following tasks currently:
 Install both `prettier` and `solidity-refactor`:
 
 ```
-npm install --save-dev prettier solidity-refactor
+npm install --save-dev prettier prettier-plugin-solidity-refactor
+```
+OR
+```
+yarn add --dev prettier prettier-plugin-solidity-refactor
 ```
 
 ## Usage
