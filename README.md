@@ -9,9 +9,10 @@ This tool does the following tasks currently:
 5) Add function visibility of `external` to fallback functions and all functions of inteface.
 6) Prettify your code using prettier.
 
+
 ## Installation 
 
-Install both `prettier` and `solidity-refactor`:
+Install both `prettier` and `prettier-plugin-solidity-refactor`:
 
 ```
 npm install --save-dev prettier prettier-plugin-solidity-refactor
@@ -29,9 +30,9 @@ This plugin allows you to [configure prettier](https://prettier.io/docs/en/optio
 ./node_modules/.bin/prettier --write --tab-width 4 --print-width 140 '**/*.sol'
 ```
 
-command with default config is
+OR command with default config is
 ```
-./node_modules/.bin/prettier '**/*.sol'
+./node_modules/.bin/prettier --write '**/*.sol'
 ```
 
 You may add the command script to your package.json file and then use `npm run scriptName` to execute the command.
