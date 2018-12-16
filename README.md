@@ -43,3 +43,8 @@ You may add the command script to your package.json file and then use `npm run s
 
 ### Known bugs
 1) It does not work when the function body has only one comment and no statements.
+
+### TODO
+1) Add test cases.
+
+## Contributions are welcome.
