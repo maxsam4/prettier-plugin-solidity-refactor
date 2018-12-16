@@ -87,20 +87,24 @@ function genericPrint(path, options, print) {
       return concat(['using ', node.libraryName, ' for *;']);
     case 'FunctionDefinition':
       if (node.isConstructor) {
-        if (node.name) {
-          doc = `function ${node.name}`;
-        } else {
-          doc = 'constructor';
-        }
+        doc = 'constructor';
       } else if (node.name === '') {
         doc = 'function';
       } else {
         doc = concat(['function ', node.name]);
       }
-
       doc = concat([doc, '(', path.call(print, 'parameters'), ')']);
-      if (node.visibility && node.visibility !== 'default') {
+      let sourceNode = path.getParentNode();
+      if (sourceNode.kind === 'interface') {
+        doc = join(' ', [doc, 'external']);
+      } else if (node.isConstructor) {
+        doc = join(' ', [doc, 'public']);
+      } else if (node.name === '') {
+        doc = join(' ', [doc, 'external']);
+      } else if (node.visibility && node.visibility !== 'default') {
         doc = join(' ', [doc, node.visibility]);
+      } else {
+        doc = join(' ', [doc, 'public']);
       }
       // @TODO: check stateMutability null vs default
       if (node.stateMutability && node.stateMutability !== 'default') {
@@ -136,7 +140,7 @@ function genericPrint(path, options, print) {
       if (!node.storageLocation) {
         let parentNode = path.getParentNode();
         let parentParentNode = path.getParentNode(1); 
-        if (parentParentNode.parameters === parentNode) {
+        if (parentParentNode.parameters === parentNode && node.typeName.type !== 'ElementaryTypeName') {
           if(parentParentNode.visibility === 'external') {
             doc = join(
               ' ',
