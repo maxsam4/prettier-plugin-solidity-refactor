@@ -107,7 +107,7 @@ function genericPrint(path, options, print) {
         doc = join(' ', [doc, 'public']);
       }
       // @TODO: check stateMutability null vs default
-      if (node.stateMutability !== 'constant') {
+      if (node.stateMutability === 'constant') {
         doc = join(' ', [doc, 'view']);
       } else if (node.stateMutability && node.stateMutability !== 'default') {
         doc = join(' ', [doc, node.stateMutability]);
