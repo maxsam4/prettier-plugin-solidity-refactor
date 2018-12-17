@@ -7,7 +7,7 @@ This tool does the following tasks currently to refactor your soldiity 0.4.X cod
 3) Rename constructor function from `function ContractName` to `constructor`.
 4) Add default function visibility of `public` to those normal functions which don't have function visibility explicitly defined.
 5) Add function visibility of `external` to fallback functions and all functions of inteface.
-6) Convert `constant` function visibility to `view`.
+6) Convert `constant` function state mutability modifier to `view`.
 7) Prettify your code using prettier.
 
 
