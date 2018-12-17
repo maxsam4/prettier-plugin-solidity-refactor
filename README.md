@@ -41,6 +41,7 @@ You may add the command script to your package.json file and then use `npm run s
 1) It does not add `payable` to addresses as it can not detect which addresses require to be payable. If you are using `addressA.send` or `addressA.transfer`, please manually declare them as `address payable addressA` rather than `address addressA`.
 2) It does not redefine expired variables. In solidity 0.4.X, variables persisted even outside their scope but in soldiity 0.5.x, you need to define them again.
 3) It does not fix illegal implicit conversions.
+4) Low level call now returns 2 parameters rather than 1. This plugin does not rafactor it.
 
 ### Known bugs
 1) It does not work when the function body has only one comment and no statements.
