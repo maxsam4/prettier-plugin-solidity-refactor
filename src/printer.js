@@ -139,21 +139,22 @@ function genericPrint(path, options, print) {
       );
     case 'Parameter':
       doc = path.call(print, 'typeName');
-      if (!node.storageLocation && (node.typeName.type !== 'ElementaryTypeName' || node.typeName.name === 'string' || node.typeName.name === 'bytes')) {
+      if (!node.storageLocation && 
+        node.typeName.type !== 'UserDefinedTypeName' && 
+        (node.typeName.type !== 'ElementaryTypeName' || node.typeName.name === 'string' || node.typeName.name === 'bytes')
+      ) {
         let parentNode = path.getParentNode();
         let parentParentNode = path.getParentNode(1); 
-        if (parentParentNode.parameters === parentNode) {
-          if(parentParentNode.visibility === 'external') {
-            doc = join(
-              ' ',
-              [doc, 'calldata', node.name].filter(element => element)
-            );
-          } else {
-            doc = join(
-              ' ',
-              [doc, 'memory', node.name].filter(element => element)
-            );
-          }
+        if (parentParentNode.parameters === parentNode && parentParentNode.visibility === 'external') {
+          doc = join(
+            ' ',
+            [doc, 'calldata', node.name].filter(element => element)
+          );
+        } else {
+          doc = join(
+            ' ',
+            [doc, 'memory', node.name].filter(element => element)
+          );
         }
       } else {
         doc = join(
