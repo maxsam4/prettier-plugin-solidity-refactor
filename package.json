@@ -1,11 +1,11 @@
 {
   "name": "prettier-plugin-solidity-refactor",
-  "version": "1.0.0-alpha.10",
+  "version": "1.0.0-alpha.11",
   "description": "prettier plugin for solidity that refactors solidity 0.4.x code to solidity 0.5.x code",
   "main": "src",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/maxsam4/prettier-plugin-solidity.git"
+    "url": "git+https://github.com/maxsam4/prettier-plugin-solidity-refactor.git"
   },
   "keywords": [
     "ethereum",
@@ -13,7 +13,8 @@
     "prettier",
     "solidity",
     "refactor",
-    "upgrade"
+    "upgrade",
+    "codemod"
   ],
   "author": {
     "email": "hi@mudit.blog",
@@ -21,9 +22,9 @@
   },
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/maxsam4/prettier-plugin-solidity/issues"
+    "url": "https://github.com/maxsam4/prettier-plugin-solidity-refactor/issues"
   },
-  "homepage": "https://github.com/maxsam4/prettier-plugin-solidity#readme",
+  "homepage": "https://mudit.blog/tool-refactor-your-solidity-0-4-x-code-to-solidity-0-5-x-code/",
   "dependencies": {
     "emoji-regex": "^7.0.1",
     "escape-string-regexp": "^1.0.5",
