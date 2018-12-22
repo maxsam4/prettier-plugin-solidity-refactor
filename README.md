@@ -45,6 +45,8 @@ You may add the command script to your package.json file and then use `npm run s
 
 ### Known bugs
 1) It does not work when the function body has only one comment and no statements.
+2) It may not work with assemly code (It won't fail but it might not print a few statements).
+3) Incomplete tupples like `(hello, )` get incorrectly refactored to `(hello)`.
 
 ### TODO
 1) Add test cases.
