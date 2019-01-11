@@ -44,7 +44,7 @@ You may add the command script to your package.json file and then use `npm run s
 4) Low level `call` now returns 2 parameters rather than 1. This plugin does not rafactor it.
 
 ### Known bugs
-1) Incomplete tupples like `(hello, )` get incorrectly refactored to `(hello)`.
+None. Please report the bugs you may find.
 
 ### TODO
 1) Add test cases.
