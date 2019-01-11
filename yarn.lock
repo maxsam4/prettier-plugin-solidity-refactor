@@ -57,10 +57,10 @@ prettier@^1.15.3:
   resolved "https://registry.yarnpkg.com/prettier/-/prettier-1.15.3.tgz#1feaac5bdd181237b54dbe65d874e02a1472786a"
   integrity sha512-gAU9AGAPMaKb3NNSUUuhhFAS7SCO4ALTN4nRIn6PJ075Qd28Yn2Ig2ahEJWdJwJmlEBTUfC7mMUSFy8MwsOCfg==
 
-solidity-parser-antlr@^0.3.3:
-  version "0.3.3"
-  resolved "https://registry.yarnpkg.com/solidity-parser-antlr/-/solidity-parser-antlr-0.3.3.tgz#0352e35f914095daa7eef9f3a55cf8074e28cc5b"
-  integrity sha512-RNUc18pjf7DLWs//WF+V+VnvrbetEbNFUYxm2JFbXU62G9WSu+nVyDxV5r+FG4wu8jom17vLdM/3I7bMBGfZ9g==
+solidity-parser-antlr@^0.4.0:
+  version "0.4.0"
+  resolved "https://registry.yarnpkg.com/solidity-parser-antlr/-/solidity-parser-antlr-0.4.0.tgz#005f38c396ca23cf7aada9b1a10d875176788201"
+  integrity sha512-RrIsh5VoHmrMQia6yLY8u8rx3JPREhSiCFz4Xb0h1Oh0prUYU2ukyWO8gG892V0UMHIXCWqvdZ3wSctNwdWThg==
 
 string-width@^3.0.0:
   version "3.0.0"
